@@ -1,0 +1,61 @@
+
+
+inventario = {}
+
+# Función para agregar un notebook
+def agregar_notebook():
+    codigo = input("Ingrese el código del notebook: ")
+    marca = input("Ingrese la marca del notebook: ")
+    modelo = input("Ingrese el modelo del notebook: ")
+    inventario[codigo] = [marca, modelo]
+    print("Notebook agregada correctamente.")
+
+
+def listar_notebooks():
+    if len(inventario) == 0:
+        print("El inventario está vacío.")
+    else:
+        for codigo in inventario:
+            print("Código:", codigo, "- Marca:", inventario[codigo][0], "- Modelo:", inventario[codigo][1])
+
+def buscar_notebook():
+    codigo = input("Ingrese el código del notebook a buscar: ")
+    if codigo in inventario:
+        print("Marca:", inventario[codigo][0], "- Modelo:", inventario[codigo][1])
+    else:
+        print("Notebook no encontrada.")
+
+def eliminar_notebook():
+    codigo = input("Ingrese el código del notebook a eliminar: ")
+    if codigo in inventario:
+        del inventario[codigo]
+        print("Notebook eliminada.")
+    else:
+        print("Notebook no encontrada.")
+
+
+def mostrar_menu():
+    print("----- Inventario de Notebooks -----")
+    print("1. Agregar notebook")
+    print("2. Listar notebooks")
+    print("3. Buscar notebook")
+    print("4. Eliminar notebook")
+    print("5. Salir")
+
+while True:
+    mostrar_menu()
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        agregar_notebook()
+    elif opcion == "2":
+        listar_notebooks()
+    elif opcion == "3":
+        buscar_notebook()
+    elif opcion == "4":
+        eliminar_notebook()
+    elif opcion == "5":
+        print("Programa finalizado.")
+        break
+    else:
+        print("Opcion no valida.")
