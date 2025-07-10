@@ -1,6 +1,6 @@
 # Inventario de Notebooks
 
-Esta aplicación en Python permite gestionar un inventario de notebooks desde la consola.
+Este codigo de python permite gestionar un inventario de notebooks desde la consola.
 
 ## Funcionalidades
 - Agregar notebook
